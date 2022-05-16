@@ -113,24 +113,24 @@ console.log(dateObj.getTime());
 // Enter height: 10
 // The area of the triangle is 100
 
-// let base = prompt("Enter base:");
-// let height = prompt("Enter height:");
-// console.log(`The area of the trianle is ${base * height * 0.5}`);
+let base = prompt("Enter base:");
+let height = prompt("Enter height:");
+console.log(`The area of the trianle is ${base * height * 0.5}`);
 
 //2-Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
-// let sideA = prompt("Enter side a:");
-// let sideB = prompt("Enter side b:");
-// let sideC = prompt("Enter side c:");
-// console.log(`The perimeter of the triangle is ${a + b + c}`);
+let sideA = prompt("Enter side a:");
+let sideB = prompt("Enter side b:");
+let sideC = prompt("Enter side c:");
+console.log(`The perimeter of the triangle is ${a + b + c}`);
 
 //3-Get length and width using prompt and calculate an area of rectangle (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width))
-// let length = prompt("Enter length:");
-// let width = prompt("Enter width:");
-// console.log(`Area of the rectangle is ${length * width}`);
+let length = prompt("Enter length:");
+let width = prompt("Enter width:");
+console.log(`Area of the rectangle is ${length * width}`);
 
 //4-Get radius using prompt and calculate the area of a circle (area = pi x r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14.
-// let radius = prompt("Enter radius:");
-// console.log(`Area of the circle is ${Math.PI * r * r}`);
+let radius = prompt("Enter radius:");
+console.log(`Area of the circle is ${Math.PI * r * r}`);
 
 //5-Calculate the slope, x-intercept and y-intercept of y = 2x -2
 let slope1 = 2; //y = mx + b and m is slope
@@ -156,9 +156,9 @@ for (x = 0; x <= 3; x++) {
 }
 
 //9-Write a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
-// let hours = prompt("Enter hours:")
-// let ratePerHour = prompt("Enter rate per hour:")
-// console.log(`Your daily pay is:${hours * ratePerHour}`);
+let hours = prompt("Enter hours:");
+let ratePerHour = prompt("Enter rate per hour:");
+console.log(`Your daily pay is:${hours * ratePerHour}`);
 
 //10-If the length of your name is greater than 7 say, your name is long else say your name is short.
 let name = "Emre";
