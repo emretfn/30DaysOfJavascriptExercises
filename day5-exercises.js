@@ -235,4 +235,16 @@ if (len % 2 === 0) {
   console.log(countries[parseInt(len / 2)]);
 }
 
-//4-
+//4-Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
+len = countries.length;
+middleIndex = parseInt((len - 1) / 2);
+let firstHalf, secondHalf;
+if (len % 2 == 0) {
+  firstHalf = countries.slice(0, middleIndex + 1);
+  secondHalf = countries.slice(middleIndex + 1, len);
+  console.log(`First Half:${firstHalf} \nSecond Half:${secondHalf}`);
+} else {
+  firstHalf = countries.slice(0, middleIndex + 1);
+  secondHalf = countries.slice(middleIndex + 1, len);
+  console.log(`First Half:${firstHalf} \nSecond Half:${secondHalf}`);
+}
