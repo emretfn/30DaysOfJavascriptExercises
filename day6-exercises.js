@@ -129,7 +129,7 @@ for (let i = 0; i <= 6; i++) {
 }
 console.log(randText);
 
-//  ************ EXERCISE: LEVEL 1 ************
+//  ************ EXERCISE: LEVEL 2 ************
 
 //1-Develop a small script which generate any number of characters random id:
 chars = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZabcçdefgğhıijklmnoöprsştuüvyz0123456789";
@@ -149,3 +149,95 @@ for (let i = 0; i < 6; i++) {
   randHex += hexadecimal.charAt(Math.floor(Math.random() * hexadecimal.length));
 }
 console.log(`#${randHex}`);
+
+//3-Write a script which generates a random rgb color number.
+let randomRGB = [];
+for (let i = 0; i < 3; i++) {
+  randomRGB.push(Math.floor(Math.random() * 256));
+}
+console.log(`rgb(${randomRGB[0]},${randomRGB[1]},${randomRGB[2]})`);
+
+//4-Using the above countries array, create the following new array.
+const countries = [
+  "Albania",
+  "Bolivia",
+  "Canada",
+  "Denmark",
+  "Ethiopia",
+  "Finland",
+  "Germany",
+  "Hungary",
+  "Ireland",
+  "Japan",
+  "Kenya",
+];
+let capitalArray = [];
+for (let i = 0; i < countries.length; i++) {
+  capitalArray.push(countries[i].toUpperCase());
+}
+console.log(capitalArray);
+
+//5-Using the above countries array, create an array for countries length'.
+let countriesLength = [];
+for (let i = 0; i < countries.length; i++) {
+  countriesLength.push(countries[i].length);
+}
+console.log(countriesLength);
+
+//6-Use the countries array to create the following array of arrays:
+let newArray = [];
+for (const country of countries) {
+  let len = country.length;
+  let firstThree = country.slice(0, 3).toUpperCase();
+  newArray.push([country, firstThree, len]);
+}
+console.log(newArray);
+
+//7-In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+let landArray = [];
+let landCounter = 0;
+for (const country of countries) {
+  if (country.includes("land")) {
+    landArray.push(country);
+    landCounter++;
+  }
+}
+if (landCounter === 0) {
+  console.log("All these countries are without land");
+} else {
+  console.log(landArray);
+}
+
+//8-In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+let iaArray = [];
+let iaCounter = 0;
+for (const country of countries) {
+  if (country.endsWith("ia")) {
+    iaArray.push(country);
+    iaCounter++;
+  }
+}
+if (iaCounter === 0) {
+  console.log("These are countries ends without ia");
+} else {
+  console.log(iaArray);
+}
+
+//9-Using the above countries array, find the country containing the biggest number of characters.
+let countryLength = [];
+
+for (const country of countries) {
+  countryLength.push([country.length, country]);
+}
+countryLength.sort().reverse();
+console.log(countryLength[0][1]);
+
+//10-Using the above countries array, find the country containing only 5 characters.
+//using the countryLength array found above
+let fiveChars = [];
+for (const country of countryLength) {
+  if (country[0] === 5) {
+    fiveChars.push(country[1]);
+  }
+}
+console.log(fiveChars);
