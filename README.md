@@ -8,3 +8,4 @@ I'm doing the exercises in the "[30 Days Of Javascript](https://github.com/Asabe
 - [Day-4 Exercises](https://github.com/emretfn/30DaysOfJavascriptExercises/blob/main/day4-exercises.js)
 - [Day-5 Exercises](https://github.com/emretfn/30DaysOfJavascriptExercises/blob/main/day5-exercises.js)
 - [Day-6 Exercises](https://github.com/emretfn/30DaysOfJavascriptExercises/blob/main/day6-exercises.js)
+- [Day-7 Exercises](https://github.com/emretfn/30DaysOfJavascriptExercises/blob/main/day7-exercises.js)
