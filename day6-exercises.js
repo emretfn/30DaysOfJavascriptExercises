@@ -241,3 +241,75 @@ for (const country of countryLength) {
   }
 }
 console.log(fiveChars);
+
+//11-Find the longest word in the webTechs array
+const webTechs = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+];
+let longest = [0, undefined];
+for (const elem of webTechs) {
+  if (longest[0] < elem.length) {
+    longest[0] = elem.length;
+    longest[1] = elem;
+  }
+}
+console.log(longest);
+//12-Use the webTechs array to create the following array of arrays:
+let arraysOfArray = [];
+for (const elem of webTechs) {
+  arraysOfArray.push([elem, elem.length]);
+}
+console.log(arraysOfArray);
+
+//13-An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack
+const mernStack = ["MongoDB", "Express", "React", "Node"];
+const mernArray = [];
+
+for (const elem of mernStack) {
+  mernArray.push(elem[0]);
+}
+console.log(mernArray.join(""));
+
+//14-Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.
+const array = [
+  "HTML",
+  "CSS",
+  "JS",
+  "React",
+  "Redux",
+  "Node",
+  "Express",
+  "MongoDB",
+];
+
+for (let i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
+for (const elem of array) {
+  console.log(elem);
+}
+//15-This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+let fruit = ["banana", "orange", "mango", "lemon"];
+let reverseFruit = [];
+
+for (let i = fruit.length - 1; i >= 0; i--) {
+  reverseFruit.push(fruit[i]);
+}
+console.log(fruit, reverseFruit);
+
+//16-Print all the elements of array as shown below.
+const fullStack = [
+  ["HTML", "CSS", "JS", "React"],
+  ["Node", "Express", "MongoDB"],
+];
+for (const elem of fullStack) {
+  for (const e of elem) {
+    console.log(e);
+  }
+}
