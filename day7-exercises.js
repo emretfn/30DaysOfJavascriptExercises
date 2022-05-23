@@ -200,3 +200,94 @@ const sumOfNumbers = (a, b) => {
   }
   return sum;
 };
+
+//11-Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+const sumOfOdds = (a, b) => {
+  let sum = 0;
+  for (let i = a; i <= b; i++) {
+    if (i % 2 === 1) {
+      sum += i;
+    }
+  }
+  return sum;
+};
+
+//12-Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+const sumOfEven = (a, b) => {
+  let sum = 0;
+  for (let i = a; i <= b; i++) {
+    if (i % 2 === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+};
+
+//13-Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+const evensAndOdds = (a) => {
+  let numberOfOdds = 0;
+  let numberOfEvens = 0;
+  for (let i = 0; i <= a; i++) {
+    if (i % 2 === 0) {
+      numberOfEvens += 1;
+    } else {
+      numberOfOdds += 1;
+    }
+  }
+  return [numberOfEvens, numberOfOdds];
+};
+
+//14-Write a function which takes any number of arguments and return the sum of the arguments
+const sum = (...args) => {
+  let sum = 0;
+  for (const elem of args) {
+    sum += elem;
+  }
+  return sum;
+};
+
+//15-Writ a function which generates a randomUserIp.
+
+function generateIP() {
+  let first = Math.floor(Math.random() * 256);
+  let second = Math.floor(Math.random() * 256);
+  let third = Math.floor(Math.random() * 256);
+  let fourth = Math.floor(Math.random() * 256);
+
+  return `${first}.${second}.${third}.${fourth}`;
+}
+
+//16-Write a function which generates a randomMacAddress
+let hexadecimal = "0123456789ABCDEF";
+let macArray = [];
+for (let i = 0; i < 7; i++) {
+  let firstString = hexadecimal[Math.floor(Math.random() * 15)];
+  let secondString = hexadecimal[Math.floor(Math.random() * 15)];
+  macArray.push(firstString + secondString);
+}
+console.log(macArray.join(":"));
+
+//17-Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
+const hexGen = () => {
+  hexadecimal = "0123456789abcdef";
+  let randHex = "";
+  for (let i = 0; i < 6; i++) {
+    randHex += hexadecimal.charAt(
+      Math.floor(Math.random() * hexadecimal.length)
+    );
+  }
+  console.log(`#${randHex}`);
+};
+hexGen();
+//18-Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+const idGen = () => {
+  chars =
+    "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZabcçdefgğhıijklmnoöprsştuüvyz0123456789";
+  randText = "";
+  len = chars.length;
+  for (let i = 0; i < 7; i++) {
+    randText += chars.charAt(Math.floor(Math.random() * len));
+  }
+  console.log(randText);
+};
+idGen();
