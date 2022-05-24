@@ -313,3 +313,70 @@ for (const elem of fullStack) {
     console.log(e);
   }
 }
+
+//  ************ EXERCISE: LEVEL 3 ************
+
+//1- Copy countries array(Avoid mutation)
+let copyArray = [];
+for (const country of countries) {
+  copyArray.push(country);
+}
+
+//2-Arrays are mutable. Create a copy of array which does not modify the original. Sort the copied array and store in a variable sortedCountries
+let sortedCountries = [];
+for (const country of countries) {
+  sortedCountries.push(country);
+}
+sortedCountries.sort();
+
+//3-Sort the webTechs array and mernStack array
+webTechs.sort();
+mernStack.sort();
+
+//4-Extract all the countries contain the word 'land' from the countries array and print it as array
+landArray = [];
+for (const country of countries) {
+  if (country.includes("land")) {
+    landArray.push(country);
+  }
+}
+
+//5-Find the country containing the hightest number of characters in the countries array
+let maxString = [0, undefined];
+for (const country of countries) {
+  if (country.length > maxString[0]) {
+    maxString[0] = country.length;
+    maxString[1] = country;
+  }
+}
+console.log(landArray);
+
+//6-Extract all the countries contain the word 'land' from the countries array and print it as array
+landArray = [];
+for (const country of countries) {
+  if (country.includes("land")) {
+    landArray.push(country);
+  }
+}
+
+//7-Extract all the countries containing only four characters from the countries array and print it as array
+let fourChars = [];
+for (let country of countries) {
+  if (country.length === 4) {
+    fourChars.push(country);
+  }
+}
+
+//8-Extract all the countries containing two or more words from the countries array and print it as array
+let twoOrMore = [];
+for (let country of countries) {
+  if (country.split("").length >= 2) {
+    twoOrMore.push(country);
+  }
+}
+
+//9-Reverse the countries array and capitalize each country and stored it as an array
+let reversedAndCapitalized = [];
+for (let i = countries.length - 1; i >= 0; i--) {
+  reversedAndCapitalized.push(countries[i].toUpperCase());
+}

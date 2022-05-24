@@ -291,3 +291,126 @@ const idGen = () => {
   console.log(randText);
 };
 idGen();
+
+//  ************ EXERCISE: LEVEL 3 ************
+
+//1-Modify the userIdGenerator function. Declare a function name userIdGeneratedByUser. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
+//in node.js there is not prompt().
+const userIdGeneratedByUser = (length, number) => {
+  chars =
+    "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZabcçdefgğhıijklmnoöprsştuüvyz0123456789";
+  randText = "";
+  //let length = prompt("ID length");
+  //let number = prompt("How many id do u want?")
+  for (let j = 0; j <= number - 1; j++) {
+    for (let i = 0; i < length; i++) {
+      randText += chars.charAt(Math.floor(Math.random() * len));
+    }
+    console.log(randText);
+    randText = "";
+  }
+};
+userIdGeneratedByUser(5, 2);
+
+//2-Write a function name rgbColorGenerator and it generates rgb colors.
+
+const rgbColorGenerator = () => {
+  let rgbArray = [];
+  for (let i = 0; i < 3; i++) {
+    rgbArray.push(Math.floor(Math.random() * 256));
+  }
+  console.log(`rgb(${rgbArray[0]},${rgbArray[1]},${rgbArray[2]})`);
+};
+rgbColorGenerator();
+
+//3-Write a function arrayOfHexaColors which return any number of hexadecimal colors in an array.
+const arrayOfHexaColors = () => {
+  hexadecimal = "0123456789abcdef";
+  let randHex = "";
+  let hexaArray = [];
+  let randomNumber = Math.floor(Math.random() * 25);
+  for (let i = 1; i < randomNumber; i++) {
+    for (let i = 0; i < 6; i++) {
+      randHex += hexadecimal.charAt(
+        Math.floor(Math.random() * hexadecimal.length)
+      );
+    }
+    randHex = "#" + randHex;
+    hexaArray.push(randHex);
+    randHex = "";
+  }
+  return hexaArray;
+};
+console.log(arrayOfHexaColors());
+
+//4-Write a function arrayOfRgbColors which return any number of RGB colors in an array.
+const arrayOfRgbColors = () => {
+  let rgbArray = [];
+  let randomNumber = Math.floor(Math.random() * 25);
+  let r, g, b, rgb;
+  for (let i = 1; i < randomNumber; i++) {
+    r = Math.floor(Math.random() * 256);
+    g = Math.floor(Math.random() * 256);
+    b = Math.floor(Math.random() * 256);
+    rgb = `rgb(${r},${g},${b})`;
+    rgbArray.push(rgb);
+  }
+  return rgbArray;
+};
+console.log(arrayOfRgbColors());
+
+//5-Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
+const convertHexaToRgb = (hexa) => {
+  //this for without "#"
+  let hexArray = hexa.split("");
+  let r = hexArray[0] + hexArray[1];
+  r = parseInt(r, 16);
+  let g = hexArray[2] + hexArray[3];
+  g = parseInt(g, 16);
+  let b = hexArray[4] + hexArray[5];
+  b = parseInt(b, 16);
+  console.log(`rgb(${r},${g},${b})`);
+};
+convertHexaToRgb("a4a4a4");
+
+//6-Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
+const convertRgbToHexa = (r, g, b) => {
+  let firstTwo = r.toString(16);
+  let secondTwo = g.toString(16);
+  let lastTwo = b.toString(16);
+  let hexaColor = `#${firstTwo}${secondTwo}${lastTwo}`;
+  return hexaColor;
+};
+console.log(convertRgbToHexa(255, 255, 0));
+
+//7-Write a function generateColors which can generate any number of hexa or rgb colors.
+const generateColors = (name, number) => {
+  if (name === "hexa") {
+    hexadecimal = "0123456789abcdef";
+    let randHex = "";
+    let hexaArray = [];
+    for (let i = 0; i < number; i++) {
+      for (let i = 0; i < 6; i++) {
+        randHex += hexadecimal.charAt(
+          Math.floor(Math.random() * hexadecimal.length)
+        );
+      }
+      randHex = "#" + randHex;
+      hexaArray.push(randHex);
+      randHex = "";
+    }
+    return hexaArray;
+  } else if (name === "rgb") {
+    let rgbArray = [];
+    let r, g, b, rgb;
+    for (let i = 0; i < number; i++) {
+      r = Math.floor(Math.random() * 256);
+      g = Math.floor(Math.random() * 256);
+      b = Math.floor(Math.random() * 256);
+      rgb = `rgb(${r},${g},${b})`;
+      rgbArray.push(rgb);
+    }
+    return rgbArray;
+  }
+};
+console.log(generateColors("rgb", 2));
