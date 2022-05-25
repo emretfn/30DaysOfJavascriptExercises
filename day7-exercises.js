@@ -414,3 +414,96 @@ const generateColors = (name, number) => {
   }
 };
 console.log(generateColors("rgb", 2));
+
+//8-Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+const shuffleArray = (arr) => {
+  let lastIndex = arr.length - 1;
+  let shuffledArray = [];
+  while (lastIndex !== -1) {
+    let randomIndex = Math.floor(Math.random() * (lastIndex + 1));
+    shuffledArray.push(arr[randomIndex]);
+    arr.splice(randomIndex, 1);
+    lastIndex--;
+  }
+  return shuffledArray;
+};
+console.log(shuffleArray([1, 2, 3, 4, 5]));
+
+//9-Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+const factorial = (int) => {
+  if (int < 0) {
+    return -1;
+  } else if (int === 0) {
+    return 1;
+  } else if (int > 0) {
+    return int * factorial(int - 1);
+  }
+};
+
+//10-Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+const isEmpty = (a) => {
+  return !Boolean(a.length);
+};
+
+//11-Call your function sum, it takes any number of arguments and it returns the sum.
+const sumV2 = (...args) => {
+  let sum = 0;
+  for (const elem of args) {
+    sum += elem;
+  }
+  return sum;
+};
+
+//12-Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+const sumOfArrayItems = (arr) => {
+  let sum = 0;
+  for (let elem of arr) {
+    if (typeof elem == "number") {
+      sum += elem;
+    } else {
+      return `${elem} is not a number`;
+    }
+  }
+  return sum;
+};
+
+//13-Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+const average = (arr) => {
+  let sum = 0;
+  let average;
+  for (let elem of arr) {
+    if (typeof elem == "number") {
+      sum += elem;
+    } else {
+      return `${elem} is not a number`;
+    }
+  }
+  average = sum / arr.length;
+  return average;
+};
+
+//14-Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+const modifyArray = (arr) => {
+  if (arr.length < 5) {
+    return `item not found`;
+  } else {
+    arr[4] = arr[4].toUpperCase();
+    return arr;
+  }
+};
+
+//15-Write a function called isPrime, which checks if a number is prime number.
+const isPrime = (int) => {
+  if (int == 0 || int == 1) {
+    return false;
+  } else if (int == 2) {
+    return true;
+  } else {
+    for (let i = 2; i < int; i++) {
+      if (int % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+};
