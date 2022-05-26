@@ -507,3 +507,15 @@ const isPrime = (int) => {
     return true;
   }
 };
+
+//16-Write a functions which checks if all items are unique in the array.
+const isUnique = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
