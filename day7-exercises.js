@@ -519,3 +519,41 @@ const isUnique = (arr) => {
   }
   return true;
 };
+
+//17-Write a function which checks if all the items of the array are the same data type.
+function checkDataType(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (typeof arr[i] != typeof arr[j]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+//18-JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
+//-
+
+//19-Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
+const sevenRandom = () => {
+  let randomNums = [];
+  while (randomNums.length <= 7) {
+    let random = Math.floor(Math.random() * 10);
+    if (randomNums.indexOf(random) === -1) {
+      randomNums.push(random);
+    }
+  }
+  return randomNums;
+};
+
+//20-Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of the original array
+const reverseCountries = (arr) => {
+  let copy = [];
+  arr.map((e) => {
+    copy.push(e);
+  });
+  arr.reverse();
+  return arr;
+};
+console.log(reverseCountries([1, 2, 3, 4]));
